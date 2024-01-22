@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { useLocation } from 'react-router-dom';
+import { formatDate } from './ApplicationList';
 
 const ApplicationDetail = () => {
 
@@ -28,9 +29,9 @@ const ApplicationDetail = () => {
                 <li>Government ID Number: {application.user.government_id_number}</li>
                 <li>Category: {application.category}</li>
                 <li>Load Value: {application.loadVal}</li>
-                <li>Date of Application: {application.dateOfApplication}</li>
-                <li>Date of Approval: {application.dateOfApproval}</li>
-                <li>Modified Date: {application.modifiedDate}</li>
+                <li>Date of Application: {formatDate(application.dateOfApplication)}</li>
+                <li>Date of Approval: {formatDate(application.dateOfApproval)}</li>
+                <li>Modified Date: {formatDate(application.modifiedDate)}</li>
                 <li>Status: {application.status}</li>
                 <li>Reviewer ID: {application.reviewer?.id}</li>
                 <li>Reviewer Name: {application.reviewer?.name}</li>

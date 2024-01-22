@@ -4,6 +4,11 @@ import { ActionEnum, ApplicationStatusEnum, CommentEnum } from '../Enum'; // Adj
 
 import { useNavigate } from 'react-router-dom';
 
+export const formatDate = (timestamp) => {
+  const date = new Date(timestamp);
+  return date.toLocaleString();
+};
+
 const ApplicationList = ({ data }) => {
   const navigate = useNavigate();
 
@@ -71,7 +76,7 @@ const ApplicationList = ({ data }) => {
         Header: 'Application Date', accessor: 'dateOfApplication', Cell: ({ value }) => new Date(value).toLocaleString()
         ,
         Cell: props => <div onClick={() =>
-          onApplicationClick(props.cell.row.original)}>{props.value}</div>
+          onApplicationClick(props.cell.row.original)}>{formatDate (props.value)}</div>
       },
       {
         Header: 'Status', accessor: 'status',
