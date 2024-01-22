@@ -13,7 +13,7 @@ const SearchBar = ({ onSearch }) => {
         type="text"
         value={searchTerm}
         onChange={e => setSearchTerm(e.target.value)}
-        placeholder="Search by ID"
+        placeholder="Search by Applicant ID"
       />
       <button onClick={handleSearch}>Search</button>
     </div>

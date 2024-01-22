@@ -43,7 +43,7 @@ const App = () => {
   };
 
   const handleSearch = searchTerm => {
-    const filteredById = data.filter(application => application.id.toString().includes(searchTerm));
+    const filteredById = data.filter(application => application.user.id.toString().includes(searchTerm));
     setFilteredData(filteredById);
   };
 
